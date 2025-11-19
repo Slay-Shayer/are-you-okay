@@ -1,0 +1,14 @@
+# Core app framework
+streamlit==1.39.0
+
+# Data handling
+pandas==2.2.3
+
+# Plotting and visualization
+matplotlib==3.9.2
+
+# Firebase integration
+firebase-admin==6.5.0
+
+# Utilities
+numpy==2.1.2
