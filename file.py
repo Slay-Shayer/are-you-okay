@@ -114,7 +114,7 @@ def run_custom_dass():
     # ============================================================
     # 🔥 Firebase Save Toggle
     # ============================================================
-    firebase_save = st.sidebar.checkbox("Save results to Database Anonymously (Optional)")
+    firebase_save = True
 
     with st.form("custom_form"):
         st.subheader("Questions")
@@ -202,4 +202,5 @@ def run_custom_dass():
 
 if __name__ == "__main__":
     run_custom_dass()
+
 
