@@ -194,10 +194,9 @@ def run_custom_dass():
     # =================================================================
     # 🔥 SAVE TO FIREBASE (IF TOGGLED)
     # =================================================================
-    if firebase_save == True:
+    if firebase_save:
         try:
             db = firestore.client()
-
             db.collection("dass_results").add({
                 "depression": d,
                 "anxiety": a,
@@ -208,14 +207,16 @@ def run_custom_dass():
                     "stress": get_severity_label(s, 's')
                 }
             })
-
-            st.success("Saved to Firebase successfully! (If configured)")
+            st.success("Saved to Firestore!")
         except Exception as e:
-            st.error(f"Firebase save failed: {e}")
+            st.error("Firebase save failed!")
+            st.error(str(e))
+
 
 
 if __name__ == "__main__":
     run_custom_dass()
+
 
 
 
