@@ -111,11 +111,6 @@ def run_custom_dass():
 
     option_labels = list(CUSTOM_OPTIONS.values())
 
-    # ============================================================
-    # 🔥 Firebase Save Toggle
-    # ============================================================
-    firebase_save = True
-
     with st.form("custom_form"):
         st.subheader("Questions")
 
@@ -191,31 +186,12 @@ def run_custom_dass():
         mime="text/csv"
     )
 
-    # =================================================================
-    # 🔥 SAVE TO FIREBASE (IF TOGGLED)
-    # =================================================================
-    if firebase_save:
-        try:
-            db = firestore.client()
-            db.collection("dass_results").add({
-                "depression": d,
-                "anxiety": a,
-                "stress": s,
-                "severity": {
-                    "depression": get_severity_label(d, 'd'),
-                    "anxiety": get_severity_label(a, 'a'),
-                    "stress": get_severity_label(s, 's')
-                }
-            })
-            st.success("Saved to Firestore!")
-        except Exception as e:
-            st.error("Firebase save failed!")
-            st.error(str(e))
 
 
 
 if __name__ == "__main__":
     run_custom_dass()
+
 
 
 
