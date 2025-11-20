@@ -133,7 +133,7 @@ def run_custom_dass():
 
             score = option_labels.index(selected_label)
             responses.append({"scale": scale, "score": score})
-
+        st.markdown('*Click `Calculate Scores` consent your submission to the database anonymously?*')
         submitted = st.form_submit_button("Calculate Scores")
 
     if not submitted:
@@ -202,6 +202,7 @@ def run_custom_dass():
 
 if __name__ == "__main__":
     run_custom_dass()
+
 
 
 
