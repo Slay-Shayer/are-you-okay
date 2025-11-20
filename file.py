@@ -90,7 +90,7 @@ def generate_csv(df):
 def generate_chart_image(df_scores):
     fig, ax = plt.subplots()
 
-    ax.bar(df_scores["Scale"], df_scores["Score"])
+    ax.bar(df_scores["Scale"], df_scores["Score"], color = 'black')
     ax.set_ylabel("Score")
     ax.set_title("Your DASS Scale Scores")
 
@@ -129,7 +129,6 @@ def run_custom_dass():
             score = option_labels.index(selected_label)
             responses.append({"scale": scale, "score": score})
         st.markdown('*Click `Calculate Scores` to see Results.*')
-        st.markdown(' **This confirms your anonymous submission to the database.**')
         submitted = st.form_submit_button("Calculate Scores")
 
     if not submitted:
@@ -191,6 +190,7 @@ def run_custom_dass():
 
 if __name__ == "__main__":
     run_custom_dass()
+
 
 
 
