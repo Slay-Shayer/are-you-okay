@@ -193,7 +193,7 @@ def run_custom_dass():
     # =================================================================
     # 🔥 SAVE TO FIREBASE (IF TOGGLED)
     # =================================================================
-    if firebase_save:
+    if firebase_save == True:
         try:
             st.success("Saved to Firebase successfully! (If configured)")
         except Exception as e:
@@ -202,5 +202,6 @@ def run_custom_dass():
 
 if __name__ == "__main__":
     run_custom_dass()
+
 
 
